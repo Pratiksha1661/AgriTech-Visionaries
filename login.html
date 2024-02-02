@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Farmlove</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo border">Agrichoice</h2>
+            </div>
+
+            <div class="search">
+                <input class="srch" type="search" name="" placeholder="Type To Text...">
+                <a href="#"> <button class="btn">Search</button></a>
+            </div>
+
+            <div class="pannel">
+                <div class="location border">
+                    <div><i class="fa-solid fa-location-dot "></i></div>
+                    <p>Farm</p>
+                    <a>Location</a>
+                </div>
+
+                <div class="chat border">
+                    <div><i class="fa-regular fa-comment icon2"></i></div>
+                    <a>Chats</a> 
+                </div>
+
+                <div class="bar border">
+                    <div><i class="fa-solid fa-bars icon2"></i></div>
+                    <a>All</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="menu ">
+            <!-- <div class="mymenu border"> -->
+                <div class="home border">
+                    <div class="home-pic "><i class="fa-solid fa-house"></i></div>
+                    <div><a href="#">HOME</a></div>
+                </div>
+                <div class="about white border"><a  href="aboutus.html">ABOUT</a></div>
+                <div class="service white border"><a  href="#">SERVICE</a></div>
+                <div class="contact  white border"><a  href="#">CONTACT</a></div>
+            <!-- </div> -->
+            <!-- <ul>    <li class="border"><a href="#">ABOUT</a></li>
+                    <li class="border"><a href="#">SERVICE</a></li>
+                    <li class="border"><a href="#">CONTACT</a></li>
+            </ul> -->
+        </div>
+
+        <div class="content">
+            <h1 class="anime"> Cultivate brighter future <br><span>Grow with us !!</span><br></h1>
+            <p class="par"><h2> Farmer's no.1 choice. </h2><br><h2> Adapt new technologies</h2>
+                <br> <h2> for the betterment...!! </h2></p><br><br>
+                
+                <button class="cn"><a href="#">JOIN US</a></button>
+                <form id="MainForm" action="form">
+                    <div class="form">
+                    <h2>Login Here</h2>
+                    <input type="email" name="email" id="emailinp" placeholder="Enter Email ">
+                    <input type="password" name="" id="passinp" placeholder="Enter Password ">
+                    <button class="btnn"><a href="#">Login</a></button>
+
+                    <p class="link">Don't have an account<br>
+                    <a href="register.html">Sign up </a> here</a></p>
+                    <p class="liw">Log in with</p>
+
+                    <div class="icons">
+                        <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
+                    </div>
+
+                </div>
+        
+        </div>
+        
+    </div>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+  
+
+</form>
+<script type="module">
+    
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+        import { getDatabase,set,ref,child } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-database.js";
+        import { getAuth,signinWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
+        
+        const firebaseConfig = {
+          apiKey: "AIzaSyA8sIDj67KXZie0xvPszedDVm3v3vtBhek",
+          authDomain: "login-ad1fb.firebaseapp.com",
+          databaseURL: "https://login-ad1fb-default-rtdb.firebaseio.com",
+          projectId: "login-ad1fb",
+          storageBucket: "login-ad1fb.appspot.com",
+          messagingSenderId: "546756954978",
+          appId: "1:546756954978:web:be6164bc1c6912ad247a3b"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db=getDatabase();
+        const auth=getAuth(app);
+        const dbref=ref(db);
+        let emailinp=document.getElementById('emailinp');
+        let passinp=document.getElementById('passinp');
+
+        let LoginUser=evt=>{
+            evt.preventDefault();
+
+            signinWithEmailAndPassword(auth,emailinp.value,passinp.value)
+            .then((credential)=>{
+                console.log(credential);
+
+            })
+            .catch((error)=>{
+                alert(error.message);
+                console.log(error.code);
+                console.log(error.message);
+            })
+        }
+        MainForm.addEventListener('submit',LoginUser)
+      </script>
+</body>    
+    
+<footer>
+    <div class="foot">
+      
+    </div>
+</footer>
+
+</html>
