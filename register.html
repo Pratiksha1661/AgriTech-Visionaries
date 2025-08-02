@@ -8,35 +8,45 @@
 <body>
 
     <div class="main">
+        <!-- Top navigation bar -->
         <div class="navbar">
+
+            <!-- Logo section -->
             <div class="icon">
                 <h2 class="logo border">Agrichoice</h2>
             </div>
 
+            <!-- Search bar section -->
             <div class="search">
                 <input class="srch" type="search" name="" placeholder="Type To text">
                 <a href="#"> <button class="btn">Search</button></a>
             </div>
 
+            <!-- Panel section with location, chat, and menu -->
             <div class="pannel">
+
+                <!-- Location button with icon and text -->
                 <div class="location border">
                     <div><i class="fa-solid fa-location-dot "></i></div>
                     <p>Farm</p>
                     <a>Location</a>
                 </div>
 
+                <!-- Chat button with icon and label -->
                 <div class="chat border">
                     <div><i class="fa-regular fa-comment icon2"></i></div>
                     <a>Chats</a> 
                 </div>
 
+                <!-- Menu bar with icon and label -->
                 <div class="bar border">
                     <div><i class="fa-solid fa-bars icon2"></i></div>
                     <a>All</a>
                 </div>
-            </div>
 
-        </div>
+            </div> <!-- End of panel -->
+
+        </div> <!-- End of navbar -->
         <div class="menu ">
             <!-- <div class="mymenu border"> -->
                 <div class="home border">
@@ -89,7 +99,7 @@
         <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     
 </form>
-<script type="module">
+    <script type="module">
     
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
         import { getDatabase,set,ref } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-database.js";
@@ -130,13 +140,12 @@
             })
         }
         MainForm.addEventListener('submit',RegisterUser)
-      </script>
+    </script>
+    <footer>
+        <div class="foot">
+          
+        </div>
+    </footer>
 </body>    
-    
-<footer>
-    <div class="foot">
-      
-    </div>
-</footer>
 
 </html>
